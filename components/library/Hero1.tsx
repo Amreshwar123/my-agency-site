@@ -1,4 +1,3 @@
-// Hero1.tsx
 'use client';
 
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -30,6 +29,16 @@ export default function Hero1() {
       {/* Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-20">
         <div className="text-center">
+          
+          {/* Logo Section */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/logo.png" 
+              alt="ASYNC Solutions Logo" 
+              className="h-24 md:h-32 w-auto animate-fade-in transition-transform hover:scale-110 duration-500" 
+            />
+          </div>
+
           {/* Premium Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm border border-purple-500/20 mb-6 md:mb-8">
             <Sparkles className="w-4 h-4 text-purple-400" />
@@ -41,11 +50,11 @@ export default function Hero1() {
           {/* Bold Title */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.15]">
             <span className="bg-gradient-to-r from-white via-gray-100 to-purple-200 bg-clip-text text-transparent">
-              Elevating
+              ASYNC
             </span>
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-purple-400 via-purple-300 to-blue-400 bg-clip-text text-transparent">
-              Digital Experiences
+              Solutions
             </span>
           </h1>
 
@@ -58,20 +67,18 @@ export default function Hero1() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* Primary Button - Get Started */}
             <button className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold text-lg shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-[#0B0A0F] overflow-hidden">
               <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative">Get Started</span>
               <ArrowRight className="relative w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
             </button>
 
-            {/* Secondary Button - Our Work */}
             <button className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/15 text-white font-semibold text-lg transition-all duration-300 hover:bg-white/10 hover:border-white/25 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-[#0B0A0F]">
               <span>Our Work</span>
             </button>
           </div>
 
-          {/* Social Proof / Trust Indicators */}
+          {/* Social Proof */}
           <div className="mt-16 md:mt-20 pt-8 md:pt-10 border-t border-white/10">
             <p className="text-gray-500 text-xs sm:text-sm uppercase tracking-wider mb-6">
               Trusted by industry leaders
@@ -87,7 +94,6 @@ export default function Hero1() {
         </div>
       </div>
 
-      {/* Bottom fade gradient for smooth transition */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0A0F] to-transparent pointer-events-none" />
     </div>
   );
