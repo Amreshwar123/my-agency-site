@@ -1,4 +1,3 @@
-// Services.tsx
 'use client';
 
 import { Code, Brain, Palette, ArrowRight } from 'lucide-react';
@@ -7,28 +6,28 @@ export default function Services() {
   const services = [
     {
       id: 1,
-      title: 'Custom Web Dev',
-      description: 'Tailored, high-performance web applications built with modern frameworks. Scalable solutions that grow with your business needs.',
+      title: 'Next.js Web Development',
+      description: 'High-performance, SEO-optimized landing pages and full-stack web applications tailored for modern businesses.',
       icon: Code,
-      features: ['React/Next.js', 'Node.js/Python', 'Cloud Integration'],
+      features: ['React / Next.js 15', 'Tailwind CSS Layouts', 'Vercel Deployment'],
       gradient: 'from-blue-500 to-cyan-500',
       bgGlow: 'bg-blue-500/10',
     },
     {
       id: 2,
-      title: 'AI Automation',
-      description: 'Intelligent automation solutions that streamline workflows and enhance decision-making with cutting-edge AI technology.',
+      title: 'AI Content & Automation',
+      description: 'Intelligent workflow automation, custom AI script generation frameworks, and faceless digital production systems.',
       icon: Brain,
-      features: ['LLM Integration', 'Workflow Automation', 'Predictive Analytics'],
+      features: ['API Tool Integration', 'Content Production Pipelines', 'System Automation'],
       gradient: 'from-purple-500 to-pink-500',
       bgGlow: 'bg-purple-500/10',
     },
     {
       id: 3,
-      title: 'Social Media Brand Kits',
-      description: 'Comprehensive brand identity packages designed for social media dominance and consistent visual storytelling.',
+      title: 'Canva Brand Identity',
+      description: 'Comprehensive design identity packages, social media kits, professional pitch decks, and digital brand materials.',
       icon: Palette,
-      features: ['Visual Identity', 'Content Templates', 'Brand Guidelines'],
+      features: ['Visual Brand Assets', 'Pitch Decks & Presentations', 'Marketing Post Design'],
       gradient: 'from-rose-500 to-orange-500',
       bgGlow: 'bg-rose-500/10',
     },
@@ -100,7 +99,7 @@ export default function Services() {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 leading-relaxed text-sm md:text-base">
                 {service.description}
               </p>
 
