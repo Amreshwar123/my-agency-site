@@ -83,13 +83,16 @@ export default function Hero1() {
             <p className="text-gray-500 text-xs sm:text-sm uppercase tracking-wider mb-6">
               Trusted by industry leaders
             </p>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10 opacity-60">
-              {['TechInnovate', 'FutureLabs', 'AICore', 'DigitalDynamics'].map((company) => (
-                <div key={company} className="text-gray-400 text-xs sm:text-sm font-medium tracking-wide">
-                  {company}
-                </div>
-              ))}
-            </div>
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50">
+               {['Next.js 15', 'Tailwind CSS', 'TypeScript', 'Canva Pro', 'Framer Motion'].map((tech) => (
+            <div 
+              key={tech} 
+              className="text-gray-400 text-xs sm:text-sm font-medium tracking-wide uppercase"
+             >
+              {tech}
+             </div>
+                ))}
+               </div>
           </div>
         </div>
       </div>
