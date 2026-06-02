@@ -1,4 +1,3 @@
-// Contact.tsx
 'use client';
 
 import { useState } from 'react';
@@ -24,15 +23,33 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     
-    // Simulate API call - Replace with your actual endpoint
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', formData);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      // Append your unique Web3Forms Access Key to the payload
+      const submissionData = {
+        ...formData,
+        access_key: "728bfbcb-189a-4518-abc8-017a5813c46e"
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(submissionData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Reset success state after 3 seconds
+        setTimeout(() => setSubmitStatus('idle'), 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -100,8 +117,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Email Us</h3>
-                  <p className="text-gray-400">shubhangi0822@gmail.com</p>
-                  <p className="text-gray-500 text-sm">amreshwarsinghrgt@gmail.com</p>
+                  <p className="text-gray-400">
+                    <a href="mailto:shubhangi0822@gmail.com" className="hover:text-purple-400 transition-colors">shubhangi0822@gmail.com</a>
+                  </p>
+                  <p className="text-gray-500 text-sm">
+                    <a href="mailto:amreshwarsinghrgt@gmail.com" className="hover:text-purple-400 transition-colors">amreshwarsinghrgt@gmail.com</a>
+                  </p>
                 </div>
               </div>
 
@@ -111,8 +132,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Call Us</h3>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
-                  <p className="text-gray-500 text-sm">Mon-Fri, 9am-6pm EST</p>
+                  <p className="text-gray-400">
+                    <a href="phone:+919079029822 or phone:6387489536" className="hover:text-purple-400 transition-colors">+91 XXXXX-XXXXX</a>
+                  </p>
+                  <p className="text-gray-500 text-sm">Available Mon-Sat for consultations</p>
                 </div>
               </div>
             </div>
@@ -121,7 +144,7 @@ export default function Contact() {
             <div className="pt-6">
               <p className="text-gray-500 text-sm mb-4">Follow us on social media</p>
               <div className="flex gap-3">
-                {['Twitter', 'LinkedIn', 'GitHub', 'Discord'].map((social) => (
+                {['LinkedIn', 'GitHub', 'Twitter', 'Discord'].map((social) => (
                   <button
                     key={social}
                     className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-400 text-sm hover:bg-white/10 hover:border-purple-500/30 hover:text-purple-400 transition-all duration-300"
