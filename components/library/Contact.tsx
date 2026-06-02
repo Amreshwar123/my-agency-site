@@ -133,7 +133,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-white font-semibold mb-1">Call Us</h3>
                   <p className="text-gray-400">
-                    <a href="phone:+919079029822 or phone:6387489536" className="hover:text-purple-400 transition-colors">+91 XXXXX-XXXXX</a>
+                    <a href="tel:+919079029822" className="hover:text-purple-400 transition-colors">+91 XXXXX-XXXXX</a>
                   </p>
                   <p className="text-gray-500 text-sm">Available Mon-Sat for consultations</p>
                 </div>
